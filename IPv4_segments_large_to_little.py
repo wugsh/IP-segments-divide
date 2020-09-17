@@ -29,11 +29,11 @@ def IPs_big_to_little(big_IPs, little_num):
     IPs_big_start = IP(big_IP_str_list[0]).strBin()[0:int(big_IP_str_list[1])]   # small segments and large segments common network bit
     
     # Because small IPv4 segments  not up 32 bits,so complement IP address with zero 
-    last_zero_str = ''
-    k = 32 - little_num
-    while k > 0:
-        last_zero_str += '0'
-        k = k - 1
+    last_zero_str = '0' * (32 - little_num)
+    #k = 32 - little_num
+    #while k > 0:
+        #last_zero_str += '0'
+        #k = k - 1
     
     # Splicing into a complete small segments list
     for j in middle_bin_list:
